@@ -14,10 +14,7 @@ Dengan sistem ini, pemilik kos, penyewa, maupun admin dapat melakukan perhitunga
 - [Struktur Project](#-struktur-project)
 - [Tech Stack](#-tech-stack)
 - [Roadmap](#-roadmap)
-- [Kontribusi](#-kontribusi)
 - [Lisensi](#-lisensi)
-- [Kontak](#-kontak)
-
 ---
 
 ## 🎯 Latar Belakang
