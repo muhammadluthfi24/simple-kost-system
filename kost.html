@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Aplikasi Harga Kos Mahasiswa</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+
+  <h2>Form Pemesanan Kos Mahasiswa</h2>
+
+
+
+  <form id="kosForm">
+
+    <label>Nama:
+
+      <input type="text" id="nama" required>
+
+    </label>
+
+
+
+    <label>Lama Sewa (bulan):
+
+      <input type="number" id="lama" min="1" required>
+
+    </label>
+
+
+
+    <label><strong>Tipe Kamar:</strong></label>
+
+    <label><input type="radio" name="kamar" value="500000">Standard (Rp500.000)</label>
+
+    <label><input type="radio" name="kamar" value="750000">Deluxe (Rp750.000)</label>
+
+    <label><input type="radio" name="kamar" value="1000000">Premium (Rp1.000.000)</label>
+
+
+
+    <label><strong>Layanan Tambahan:</strong></label>
+
+    <label><input type="checkbox" name="tambahan" value="100000">Laundry (Rp100.000)</label>
+
+    <label><input type="checkbox" name="tambahan" value="300000">Makan 2x Sehari (Rp300.000)</label>
+
+
+
+    <br><br>
+
+    <button type="button" onclick="hitungKos()">Hitung Total</button>
+
+    <button type="button" onclick="window.print()">Cetak Struk</button>
+
+  </form>
+
+
+
+  <div id="struk" class="struk">
+
+    <h3>Struk Pembayaran Kos</h3>
+
+    <p id="outputNama"></p>
+
+    <p id="outputLama"></p>
+
+    <p id="outputKamar"></p>
+
+    <p id="outputTambahan"></p>
+
+    <p id="outputTotal" style="font-weight: bold; font-size: 1.1rem;"></p>
+
+  </div>
+
+
+
+  <script>
+
+    function hitungKos() {
+
+      const nama = document.getElementById("nama").value.trim();
+
+      const lama = parseInt(document.getElementById("lama").value);
+
+      const kamar = document.querySelector('input[name="kamar"]:checked');
+
+      const layanan = document.querySelectorAll('input[name="tambahan"]:checked');
+
+
+
+      if (!nama || isNaN(lama) || lama < 1 || !kamar) {
+
+        alert("Harap isi semua data dengan benar.");
+
+        return;
+
+      }
+
+
+
+      const hargaKamar = parseInt(kamar.value);
+
+      let total = hargaKamar * lama;
+
+
+
+      let listTambahan = "";
+
+      layanan.forEach((item) => {
+
+        total += parseInt(item.value);
+
+        listTambahan += `- ${item.parentElement.innerText}<br>`;
+
+      });
+
+
+
+      document.getElementById("outputNama").innerHTML = "Nama: " + nama;
+
+      document.getElementById("outputLama").innerHTML = "Lama Sewa: " + lama + " bulan";
+
+      document.getElementById("outputKamar").innerHTML = "Tipe Kamar: Rp" + hargaKamar.toLocaleString();
+
+      document.getElementById("outputTambahan").innerHTML = "Layanan Tambahan:<br>" + (listTambahan || "- Tidak ada");
+
+      document.getElementById("outputTotal").innerHTML = "Total Bayar: Rp" + total.toLocaleString();
+
+
+
+      document.getElementById("struk").style.display = "block";
+
+    }
+
+  </script>
+
+</body>
+
+</html>
