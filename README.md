@@ -10,8 +10,6 @@ Dengan sistem ini, pemilik kos, penyewa, maupun admin dapat melakukan perhitunga
 - [Fitur Utama](#-fitur-utama)
 - [Preview](#-preview)
 - [Arsitektur Aplikasi](#-arsitektur-aplikasi)
-- [Instalasi & Menjalankan](#-instalasi--menjalankan)
-- [Struktur Project](#-struktur-project)
 - [Tech Stack](#-tech-stack)
 - [Roadmap](#-roadmap)
 - [Lisensi](#-lisensi)
