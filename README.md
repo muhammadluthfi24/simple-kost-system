@@ -56,5 +56,6 @@ Arsitektur sederhana ini memungkinkan aplikasi dijalankan langsung di browser ta
 ---
 ## 📄 Lisensi
 MIT License © 2025 - **Simple Kost Management System**  
-Repositori ini bersifat open-source dan bebas digunakan untuk tujuan personal maupun komersial dengan tetap mencantumkan lisensi.
+Repositori ini **tidak diperkenankan untuk digunakan, disalin, dimodifikasi, maupun dipublikasikan ulang oleh pihak manapun** tanpa izin tertulis dari pemilik.
+
 
